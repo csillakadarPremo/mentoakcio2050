@@ -192,14 +192,14 @@ JEGYEZZÉTEK FEL!
 
 <script>
 
-/* URL vége */
-let path = window.location.pathname;
+/* URL paraméterek */
+const params = new URLSearchParams(window.location.search);
 
-/* /AEA -> AEA */
-let code = path.replaceAll("/","");
+/* c paraméter */
+let code = params.get("c");
 
-/* ha nincs semmi */
-if(code === ""){
+/* ha nincs */
+if(!code){
     code = "???";
 }
 
