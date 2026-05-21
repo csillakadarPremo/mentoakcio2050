@@ -2,16 +2,25 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MENTŐAKCIÓ 2050</title>
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    height:100vh;
+    min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
+    padding:20px;
 
     font-family:Arial,sans-serif;
 
@@ -21,147 +30,192 @@ body{
     overflow:hidden;
 }
 
-/* háttér fények */
+/* háttér glow */
 body::before{
     content:"";
     position:absolute;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,
-    rgba(34,197,94,0.12),
+
+    width:400px;
+    height:400px;
+
+    background:
+    radial-gradient(circle,
+    rgba(34,197,94,0.14),
     transparent 70%);
-    top:-250px;
-    left:-250px;
+
+    top:-150px;
+    left:-150px;
 }
 
 body::after{
     content:"";
     position:absolute;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle,
-    rgba(251,191,36,0.15),
+
+    width:300px;
+    height:300px;
+
+    background:
+    radial-gradient(circle,
+    rgba(251,191,36,0.12),
     transparent 70%);
-    bottom:-180px;
+
+    bottom:-120px;
     right:-120px;
 }
 
-/* fő panel */
+/* fő card */
 .card{
     position:relative;
     z-index:2;
 
-    width:820px;
+    width:100%;
+    max-width:430px;
 
     background:rgba(255,255,255,0.82);
 
     backdrop-filter:blur(10px);
 
-    border-radius:30px;
+    border-radius:28px;
 
-    padding:45px;
+    padding:28px;
 
     box-shadow:
-    0 10px 40px rgba(0,0,0,0.12);
-
-    border:1px solid rgba(255,255,255,0.7);
+    0 10px 30px rgba(0,0,0,0.12);
 
     overflow:hidden;
 }
 
-/* halvány dekor kép */
+/* rácsvonalak */
+.lines{
+    position:absolute;
+    inset:0;
+
+    opacity:0.05;
+
+    background-image:
+    linear-gradient(to right,#166534 1px,transparent 1px),
+    linear-gradient(to bottom,#166534 1px,transparent 1px);
+
+    background-size:32px 32px;
+
+    pointer-events:none;
+}
+
+/* dekor kép */
 .image-wrap{
     position:absolute;
-    right:-20px;
+
+    right:-50px;
     top:20px;
 
-    opacity:0.12;
+    opacity:0.08;
 
     pointer-events:none;
 }
 
 .image-wrap img{
-    width:260px;
-    transform:rotate(-8deg);
+    width:180px;
+    transform:rotate(-12deg);
 }
 
 /* cím */
 h1{
     text-align:center;
-    font-size:46px;
+
+    font-size:34px;
 
     color:#166534;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
-    letter-spacing:2px;
+    line-height:1.2;
 }
 
 /* alcím */
 .subtitle{
     text-align:center;
+
     color:#475569;
-    font-size:17px;
-    margin-bottom:40px;
+
+    font-size:14px;
+
+    margin-bottom:35px;
+
+    letter-spacing:1px;
 }
 
-/* KÓD FŐFÓKUSZ */
+/* FŐ KÓD */
 .hint{
     text-align:center;
 
-    font-size:52px;
+    font-size:34px;
 
-    letter-spacing:12px;
+    letter-spacing:6px;
 
     color:#15803d;
 
     font-weight:bold;
 
-    margin:50px 0;
+    margin:35px 0;
 
-    text-shadow:
-    0 0 10px rgba(34,197,94,0.25);
+    padding:24px 0;
 
     border-top:2px solid rgba(21,128,61,0.15);
     border-bottom:2px solid rgba(21,128,61,0.15);
 
-    padding:30px 0;
+    text-shadow:
+    0 0 10px rgba(34,197,94,0.22);
 }
 
 /* lista */
 ul{
-    font-size:22px;
-    line-height:2;
+    padding-left:20px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
     color:#1e293b;
 }
 
 /* warning */
 .warning{
-    margin-top:35px;
+    margin-top:30px;
 
     text-align:center;
 
-    font-size:26px;
+    font-size:20px;
 
     font-weight:bold;
 
     color:#b45309;
 
-    letter-spacing:2px;
+    letter-spacing:1px;
 }
 
-/* extra futurisztikus vonalak */
-.lines{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    opacity:0.08;
+/* mobil finomhangolás */
+@media (max-width:480px){
 
-    background-image:
-    linear-gradient(to right, #166534 1px, transparent 1px),
-    linear-gradient(to bottom, #166534 1px, transparent 1px);
+    h1{
+        font-size:28px;
+    }
 
-    background-size:40px 40px;
+    .hint{
+        font-size:28px;
+        letter-spacing:4px;
+    }
+
+    ul{
+        font-size:16px;
+    }
+
+    .warning{
+        font-size:18px;
+    }
+
+    .image-wrap img{
+        width:140px;
+    }
 }
 
 </style>
@@ -174,7 +228,7 @@ ul{
 <div class="lines"></div>
 
 <div class="image-wrap">
-    <img src="egészség-mérleg.jpg">
+    <img src="a4d12e81-ee35-4a9c-bae5-1098ddb0694c.png">
 </div>
 
 <h1>⚖️ MENTŐAKCIÓ 2050 ⚖️</h1>
