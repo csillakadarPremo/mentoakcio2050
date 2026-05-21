@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>MENTŐAKCIÓ 2050</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Arial,sans-serif;
+
+    background:
+    linear-gradient(135deg,#f8fafc,#ecfccb,#dcfce7);
+
+    overflow:hidden;
+}
+
+/* háttér fények */
+body::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,
+    rgba(34,197,94,0.12),
+    transparent 70%);
+    top:-250px;
+    left:-250px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,
+    rgba(251,191,36,0.15),
+    transparent 70%);
+    bottom:-180px;
+    right:-120px;
+}
+
+/* fő panel */
+.card{
+    position:relative;
+    z-index:2;
+
+    width:820px;
+
+    background:rgba(255,255,255,0.82);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.12);
+
+    border:1px solid rgba(255,255,255,0.7);
+
+    overflow:hidden;
+}
+
+/* halvány dekor kép */
+.image-wrap{
+    position:absolute;
+    right:-20px;
+    top:20px;
+
+    opacity:0.12;
+
+    pointer-events:none;
+}
+
+.image-wrap img{
+    width:260px;
+    transform:rotate(-8deg);
+}
+
+/* cím */
+h1{
+    text-align:center;
+    font-size:46px;
+
+    color:#166534;
+
+    margin-bottom:8px;
+
+    letter-spacing:2px;
+}
+
+/* alcím */
+.subtitle{
+    text-align:center;
+    color:#475569;
+    font-size:17px;
+    margin-bottom:40px;
+}
+
+/* KÓD FŐFÓKUSZ */
+.hint{
+    text-align:center;
+
+    font-size:52px;
+
+    letter-spacing:12px;
+
+    color:#15803d;
+
+    font-weight:bold;
+
+    margin:50px 0;
+
+    text-shadow:
+    0 0 10px rgba(34,197,94,0.25);
+
+    border-top:2px solid rgba(21,128,61,0.15);
+    border-bottom:2px solid rgba(21,128,61,0.15);
+
+    padding:30px 0;
+}
+
+/* lista */
+ul{
+    font-size:22px;
+    line-height:2;
+    color:#1e293b;
+}
+
+/* warning */
+.warning{
+    margin-top:35px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    color:#b45309;
+
+    letter-spacing:2px;
+}
+
+/* extra futurisztikus vonalak */
+.lines{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:0.08;
+
+    background-image:
+    linear-gradient(to right, #166534 1px, transparent 1px),
+    linear-gradient(to bottom, #166534 1px, transparent 1px);
+
+    background-size:40px 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="lines"></div>
+
+<div class="image-wrap">
+    <img src="egészség-mérleg.jpg">
+</div>
+
+<h1>⚖️ MENTŐAKCIÓ 2050 ⚖️</h1>
+
+<div class="subtitle">
+VÁLSÁGKEZELŐ EGYSÉG – TITKOS DEKÓDOLÁS
+</div>
+
+<div class="hint">
+__ ________ _______ ______
+</div>
+
+<ul>
+<li>A gyógymód nem tabletta vagy vakcina.</li>
+<li>Minden ember naponta alakítja.</li>
+<li>A megszerzett betűk segítenek megfejteni.</li>
+<li>Az egyensúly dönti el a jövőt.</li>
+</ul>
+
+<div class="warning">
+RAKJÁTOK ÖSSZE A BETŰKET!
+</div>
+
+</div>
+
+</body>
+</html>
