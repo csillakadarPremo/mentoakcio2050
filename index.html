@@ -12,75 +12,82 @@
     box-sizing:border-box;
 }
 
-body{
+html,body{
     margin:0;
-    min-height:100vh;
+    padding:0;
+    width:100%;
+    min-height:100%;
+    font-family:Arial,sans-serif;
+}
+
+body{
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    padding:20px;
-
-    font-family:Arial,sans-serif;
+    padding:5vw;
 
     background:
     linear-gradient(135deg,#f8fafc,#ecfccb,#dcfce7);
 
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 /* háttér glow */
 body::before{
     content:"";
-    position:absolute;
+    position:fixed;
 
-    width:400px;
-    height:400px;
+    width:60vw;
+    height:60vw;
 
     background:
     radial-gradient(circle,
     rgba(34,197,94,0.14),
     transparent 70%);
 
-    top:-150px;
-    left:-150px;
+    top:-20vw;
+    left:-20vw;
+
+    pointer-events:none;
 }
 
 body::after{
     content:"";
-    position:absolute;
+    position:fixed;
 
-    width:300px;
-    height:300px;
+    width:50vw;
+    height:50vw;
 
     background:
     radial-gradient(circle,
     rgba(251,191,36,0.12),
     transparent 70%);
 
-    bottom:-120px;
-    right:-120px;
+    bottom:-15vw;
+    right:-15vw;
+
+    pointer-events:none;
 }
 
-/* fő card */
+/* card */
 .card{
-    position:relative;
-    z-index:2;
 
-    width:100%;
-    max-width:430px;
+    position:relative;
+
+    width:min(92vw, 42rem);
 
     background:rgba(255,255,255,0.82);
 
     backdrop-filter:blur(10px);
 
-    border-radius:28px;
+    border-radius:2rem;
 
-    padding:28px;
+    padding:8vw;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.12);
+    0 1rem 3rem rgba(0,0,0,0.12);
 
     overflow:hidden;
 }
@@ -96,17 +103,18 @@ body::after{
     linear-gradient(to right,#166534 1px,transparent 1px),
     linear-gradient(to bottom,#166534 1px,transparent 1px);
 
-    background-size:32px 32px;
+    background-size:2rem 2rem;
 
     pointer-events:none;
 }
 
 /* dekor kép */
 .image-wrap{
+
     position:absolute;
 
-    right:-50px;
-    top:20px;
+    right:-8%;
+    top:3%;
 
     opacity:0.08;
 
@@ -114,64 +122,73 @@ body::after{
 }
 
 .image-wrap img{
-    width:180px;
+
+    width:35vw;
+    max-width:12rem;
+
     transform:rotate(-12deg);
 }
 
 /* cím */
 h1{
+
     text-align:center;
 
-    font-size:34px;
+    font-size:clamp(1.8rem, 5vw, 3rem);
 
     color:#166534;
 
-    margin-bottom:10px;
+    margin-bottom:0.8rem;
 
     line-height:1.2;
 }
 
 /* alcím */
 .subtitle{
+
     text-align:center;
 
     color:#475569;
 
-    font-size:14px;
+    font-size:clamp(0.8rem, 2.8vw, 1rem);
 
-    margin-bottom:35px;
+    margin-bottom:2rem;
 
-    letter-spacing:1px;
+    letter-spacing:0.08em;
 }
 
-/* FŐ KÓD */
+/* fő kód */
 .hint{
+
     text-align:center;
 
-    font-size:34px;
+    font-size:clamp(1.8rem, 7vw, 3.5rem);
 
-    letter-spacing:6px;
+    letter-spacing:0.18em;
 
     color:#15803d;
 
     font-weight:bold;
 
-    margin:35px 0;
+    margin:2.5rem 0;
 
-    padding:24px 0;
+    padding:1.5rem 0;
 
     border-top:2px solid rgba(21,128,61,0.15);
     border-bottom:2px solid rgba(21,128,61,0.15);
 
     text-shadow:
-    0 0 10px rgba(34,197,94,0.22);
+    0 0 0.8rem rgba(34,197,94,0.22);
+
+    word-break:break-word;
 }
 
 /* lista */
 ul{
-    padding-left:20px;
 
-    font-size:18px;
+    padding-left:1.2rem;
+
+    font-size:clamp(1rem, 3.5vw, 1.3rem);
 
     line-height:1.8;
 
@@ -180,41 +197,27 @@ ul{
 
 /* warning */
 .warning{
-    margin-top:30px;
+
+    margin-top:2rem;
 
     text-align:center;
 
-    font-size:20px;
+    font-size:clamp(1rem, 4vw, 1.5rem);
 
     font-weight:bold;
 
     color:#b45309;
 
-    letter-spacing:1px;
+    letter-spacing:0.08em;
 }
 
-/* mobil finomhangolás */
-@media (max-width:480px){
+/* nagyon alacsony kijelzők */
+@media (max-height:700px){
 
-    h1{
-        font-size:28px;
-    }
-
-    .hint{
-        font-size:28px;
-        letter-spacing:4px;
-    }
-
-    ul{
-        font-size:16px;
-    }
-
-    .warning{
-        font-size:18px;
-    }
-
-    .image-wrap img{
-        width:140px;
+    body{
+        align-items:flex-start;
+        padding-top:6vh;
+        padding-bottom:6vh;
     }
 }
 
